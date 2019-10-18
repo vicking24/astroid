@@ -4,21 +4,39 @@
 
 boolean up, down, left, right, space;
 PImage rocket;
+int point;
+
+final int intro=1;
+final int play=2;
+final int gameover=3;
+
+int mode=intro;
+
 
 ship myship;
+ufo myufo;
 
 ArrayList <gameobject> mygameobject;
 
 void setup () {
   size (800, 600);
-  
+     
 rocket =loadImage ("spaceship.png");
-rocket.resize (70,50);
 imageMode (CENTER);
+textAlign (CENTER, CENTER);
 
 myship= new ship();
+myufo= new ufo ();
 
 mygameobject = new ArrayList <gameobject>();
+
+mygameobject.add (myship);
+mygameobject.add (new astroid() );
+mygameobject.add (new astroid() );
+mygameobject.add (new astroid() );
+
+mygameobject.add (myufo);
+
 
 }
 
@@ -26,22 +44,29 @@ mygameobject = new ArrayList <gameobject>();
 void draw () {
   background (255);
   
-myship.show();
-myship.act();
-
-int i=0;
-
-while (i< mygameobject.size() ) {
-  gameobject bullet=mygameobject.get (i);
-  bullet.show ();
-  bullet.act();
   
-i++;
+  
+  
+  
+ if (mode==intro) {
+    intro();
+  } else if (mode ==play) {
+    play();
+  } else if (mode==gameover) {
+    gameover();
+  }
 
 }
 
+void mouseReleased () {
 
+  if (mode==intro) {
+    introclicked();
+  } else if (mode==gameover) {
+    gameoverclicked();
+  }
 }
+
 
 void keyPressed () {
 if (keyCode == UP) up=true;
