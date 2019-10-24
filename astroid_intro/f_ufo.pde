@@ -1,6 +1,6 @@
 class ufo extends gameobject {
 
-  int timer;
+ 
   
 ufo () {
 

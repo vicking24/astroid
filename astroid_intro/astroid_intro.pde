@@ -1,6 +1,7 @@
 //victoria
 //oct 3
 
+//timer for sprinkle
 
 boolean up, down, left, right, space;
 PImage rocket;
@@ -9,6 +10,7 @@ int point;
 final int intro=1;
 final int play=2;
 final int gameover=3;
+final int win=4;
 
 int mode=intro;
 
@@ -17,6 +19,7 @@ ship myship;
 ufo myufo;
 
 ArrayList <gameobject> mygameobject;
+ArrayList <sprinkle> mysprinkle;
 
 void setup () {
   size (800, 600);
@@ -29,6 +32,7 @@ myship= new ship();
 myufo= new ufo ();
 
 mygameobject = new ArrayList <gameobject>();
+mysprinkle = new ArrayList <sprinkle>();
 
 mygameobject.add (myship);
 mygameobject.add (new astroid() );
@@ -54,6 +58,8 @@ void draw () {
     play();
   } else if (mode==gameover) {
     gameover();
+  }else if (mode==win ) {
+  win ();
   }
 
 }
@@ -64,6 +70,8 @@ void mouseReleased () {
     introclicked();
   } else if (mode==gameover) {
     gameoverclicked();
+  } else if (mode==win) {
+  winclicked();
   }
 }
 

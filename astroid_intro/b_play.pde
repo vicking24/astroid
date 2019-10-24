@@ -19,7 +19,20 @@ while (i< mygameobject.size() ) {
 
 }
 
+ int j=0;
+  while (j< mysprinkle.size() ) {
+    sprinkle s = mysprinkle.get (j); //class, variable = arraylist.get (variable);
+    
+    s.show();
+    s.act();
+
+    i=i+1;
+    
+    }
+ 
+
 textSize (30);
+fill (100);
 text ("points:"+point, 100, 100);
 
 text ("lives:"+myship.lives, 500, 100);

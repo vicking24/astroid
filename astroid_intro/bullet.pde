@@ -21,6 +21,7 @@ bullet () {
 void show () {
 
  stroke (1);
+ fill (100);
 ellipse (location.x, location.y, size, size);
  
 }
