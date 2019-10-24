@@ -1,10 +1,11 @@
 //victoria
 //oct 3
 
-//timer for sprinkle
+//make ufo timer work
 
 boolean up, down, left, right, space;
 PImage rocket;
+PImage ufop;
 int point;
 
 final int intro=1;
@@ -16,7 +17,7 @@ int mode=intro;
 
 
 ship myship;
-ufo myufo;
+//ufo myufo;
 
 ArrayList <gameobject> mygameobject;
 ArrayList <sprinkle> mysprinkle;
@@ -25,11 +26,12 @@ void setup () {
   size (800, 600);
      
 rocket =loadImage ("spaceship.png");
+ufop= loadImage ("ufo.png");
 imageMode (CENTER);
 textAlign (CENTER, CENTER);
 
 myship= new ship();
-myufo= new ufo ();
+//myufo= new ufo ();
 
 mygameobject = new ArrayList <gameobject>();
 mysprinkle = new ArrayList <sprinkle>();
@@ -39,7 +41,7 @@ mygameobject.add (new astroid() );
 mygameobject.add (new astroid() );
 mygameobject.add (new astroid() );
 
-mygameobject.add (myufo);
+
 
 
 }
