@@ -52,7 +52,7 @@ class astroid extends gameobject {
       i++;
     }
 
-    if (dist (myship.location.x, myship.location.y, location.x, location.y)<size/2+30) {
+    if (dist (myship.location.x, myship.location.y, location.x, location.y)<size/2+25) {
       myship.lives --;
       myship.location.x= width/2;
       myship.location.y= height/2;

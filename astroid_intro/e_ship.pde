@@ -10,7 +10,7 @@ class ship extends gameobject { //connects the classes together
     lives=3;
     location= new PVector (width/2, height/2);
     velocity= new PVector (0, 0);
-    direction =new PVector (0, -0.1);
+    direction =new PVector (0, -0.08);
     shottimer=0;
     threshold=30;
   }
@@ -21,7 +21,7 @@ class ship extends gameobject { //connects the classes together
     translate (location.x, location.y);
 
     rotate (direction.heading());
-    rocket.resize (70,50);
+    rocket.resize (50,30);
     image (rocket, 0, 0);
     
     if (location.x>width+50) {

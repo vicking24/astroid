@@ -1,12 +1,13 @@
 //victoria
 //oct 3
 
-//make ufo timer work
 
 boolean up, down, left, right, space;
 PImage rocket;
 PImage ufop;
 int point;
+int ufotimer=0;
+
 
 final int intro=1;
 final int play=2;
@@ -40,6 +41,7 @@ mygameobject.add (myship);
 mygameobject.add (new astroid() );
 mygameobject.add (new astroid() );
 mygameobject.add (new astroid() );
+//mygameobject.add (myufo);
 
 
 

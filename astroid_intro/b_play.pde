@@ -1,15 +1,17 @@
 void play () {
   
-  int ufotimer=0;
+  
   
   myship.show();
 myship.act();
   
   ufotimer++;
-  if (ufotimer==600){
+  if (ufotimer==400){
   ufotimer=0;
   mygameobject.add (new ufo());
   }
+ 
+  
   
 int i=0;
 

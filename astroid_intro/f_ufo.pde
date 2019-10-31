@@ -2,10 +2,14 @@ class ufo extends gameobject {
 
   float r;
   float a, b;
+    int shottimer;
+  int threshold;
 
   ufo () {
 
     lives=1;
+    shottimer=0;
+    threshold=50;
 
     location= new PVector (a, b);
     //location= new PVector (random (0, width), 0);
@@ -31,7 +35,7 @@ class ufo extends gameobject {
     }
     
      velocity= new PVector (width/2-location.x, height/2- location.y);
-    velocity.setMag (5);
+    velocity.setMag (3);
     
   }
 
@@ -39,11 +43,21 @@ class ufo extends gameobject {
 
 
 
-    ufop.resize (100, 100);
+    ufop.resize (60, 60);
     image (ufop, location.x, location.y);
   }
 
   void act () {
-    super.act();
+   location.add(velocity);
+    
+  if (location.x>width||location.x<0|| location.y>height|| location.y<0) {
+  lives=0;
+  }
+  shottimer++;
+  if (shottimer>threshold) {
+      mygameobject.add ((new ufobullet (location.x, location.y)) );
+      shottimer=0;
+    }
+  
   }
 }
