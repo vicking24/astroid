@@ -6,9 +6,9 @@ class ufobullet extends gameobject {
 ufobullet (float x, float y) {
  location = new PVector (x,y);
  velocity= new PVector (myship.location.x-x, myship.location.y-y);
- velocity.setMag(10);
+ velocity.setMag(3);
  lives=1;
- timer=40;
+ timer=250;
  size=10;
  
  
@@ -30,6 +30,16 @@ ellipse (location.x, location.y, size, size);
 void act () {
 super.act();
 
+ 
+    if (dist (myship.location.x, myship.location.y, location.x, location.y)<size/2+25) {
+      myship.lives --;
+      myship.location.x= width/2;
+      myship.location.y= height/2;
+      myship.velocity.x=0;
+      myship.velocity.y=0;
+      lives=0;
+    
+    }
 
 
 timer--;
