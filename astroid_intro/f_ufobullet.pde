@@ -29,10 +29,10 @@ ellipse (location.x, location.y, size, size);
 
 void act () {
 super.act();
-
  
     if (dist (myship.location.x, myship.location.y, location.x, location.y)<size/2+25) {
       myship.lives --;
+      lif_ = true;
       myship.location.x= width/2;
       myship.location.y= height/2;
       myship.velocity.x=0;

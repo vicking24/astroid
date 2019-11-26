@@ -1,8 +1,11 @@
 class astroid extends gameobject {
   int size;
+  //float x= random (0, 300)||random (500, 800); 
+  float x = (int) random(0, 1) == 1 ? random(0, 300) : random(500, 800);
+  float y = (int) random(0, 1) == 1 ? random(0, 300) : random(500, 800);
 
   astroid () {
-    location = new PVector (random (0, width ), random (0, height));
+    location = new PVector (x, y);
     velocity = new PVector (random (-1, 1), random (-5, 5));
 
     lives=1;
@@ -51,9 +54,9 @@ class astroid extends gameobject {
 
       i++;
     }
-
     if (dist (myship.location.x, myship.location.y, location.x, location.y)<size/2+25) {
       myship.lives --;
+      lif_ = true;
       myship.location.x= width/2;
       myship.location.y= height/2;
       myship.velocity.x=0;

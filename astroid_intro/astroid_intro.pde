@@ -1,12 +1,19 @@
 //victoria
 //oct 3
 
+//make add appear again
+
 
 boolean up, down, left, right, space;
 PImage rocket;
 PImage ufop;
 int point;
 int ufotimer=0;
+int shotadd;
+
+
+
+boolean lif_ = false;
 
 
 final int intro=1;
@@ -18,6 +25,7 @@ int mode=intro;
 
 
 ship myship;
+addl myaddl;
 //ufo myufo;
 
 ArrayList <gameobject> mygameobject;
@@ -32,12 +40,14 @@ imageMode (CENTER);
 textAlign (CENTER, CENTER);
 
 myship= new ship();
+myaddl= new addl();
 //myufo= new ufo ();
 
 mygameobject = new ArrayList <gameobject>();
 mysprinkle = new ArrayList <sprinkle>();
 
 mygameobject.add (myship);
+mygameobject.add (myaddl);
 mygameobject.add (new astroid() );
 mygameobject.add (new astroid() );
 mygameobject.add (new astroid() );

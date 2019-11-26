@@ -66,10 +66,18 @@ class ufo extends gameobject {
         if (dist (obj2.location.x, obj2.location.y, location.x, location.y)<size/2+obj2.size/2) {
           lives=0;
           obj2.lives=0;
+          myship.lives++;
         }
       }
       i++;
     }
+   
+   if(lif_==true){
+     lives = 0;
+     lif_ = false;
+   }
+   
+
    
     
   }

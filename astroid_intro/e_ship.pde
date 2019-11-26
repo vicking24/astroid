@@ -3,7 +3,6 @@ class ship extends gameobject { //connects the classes together
   PVector direction;
   int shottimer;
   int threshold;
-  int lives;
 
   ship () {
 
@@ -24,21 +23,6 @@ class ship extends gameobject { //connects the classes together
     rocket.resize (50,30);
     image (rocket, 0, 0);
     
-    if (location.x>width+50) {
-    location.x=-50;
-    }
-    
-     if (location.x<-50) {
-    location.x=width+50;
-    }
-    
-    if (location.y>height+50) {
-    location.y=-50;
-    }
-    
-    if (location.y<-50) {
-    location.y=height+50;
-    }
 
     popMatrix();
     
@@ -59,10 +43,12 @@ class ship extends gameobject { //connects the classes together
       shottimer=0;
     }
     
-    if (lives==0) {
+    if (lives<=0) {
     mode=gameover;
     
     }
+    
+
     
   }
 }
