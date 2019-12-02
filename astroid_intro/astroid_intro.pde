@@ -1,7 +1,7 @@
 //victoria
 //oct 3
 
-//make add appear again
+//shield appear again
 
 
 boolean up, down, left, right, space;
@@ -10,6 +10,9 @@ PImage ufop;
 int point;
 int ufotimer=0;
 int shotadd;
+int addtimer=0;
+boolean safe=false;
+int safetimer;
 
 
 
@@ -62,9 +65,7 @@ mygameobject.add (new astroid() );
 void draw () {
   background (255);
   
-  
-  
-  
+
   
  if (mode==intro) {
     intro();

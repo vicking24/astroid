@@ -1,18 +1,15 @@
 class addl extends gameobject {
 
-float shottimer;
-float threshold;
-float x, y, size;
+
+float size;
 
   
 addl () {
-
-shottimer=0;
-threshold=350;
-x=random (0, 800);
-y= random (0, 800);
+  
+location=new PVector (random (0, 800), random (0,800));
 size =20;
 lives=1;
+velocity=new PVector (0,0);
 
 
 
@@ -21,8 +18,9 @@ lives=1;
 
 void show () {
 fill (#D0E531); //yellow
+stroke (0);
 if (lives==1){
- ellipse (x, y, size, size);
+ ellipse (location.x, location.y, size, size);
  
 }
 
@@ -31,15 +29,11 @@ if (lives==1){
 
 void act () {
 
- shottimer++;
-    if (shottimer>threshold) {
-      lives=1;
-     myaddl= new addl();
-      shottimer=0;
-    }
+  super.act();
 
 
-    if (dist (myship.location.x, myship.location.y, x, y)<25+size) {
+
+    if (dist (myship.location.x, myship.location.y, location.x, location.y)<25+size) {
     lives=0;
     myship.lives=myship.lives+2;
     

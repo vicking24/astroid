@@ -21,6 +21,7 @@ timer =20;
 
 void show () {
   fill (200);
+  stroke (0);
 ellipse (location.x, location.y, size, size);
 
 

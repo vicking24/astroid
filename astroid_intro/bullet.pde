@@ -22,6 +22,7 @@ void show () {
 
  stroke (1);
  fill (100);
+ stroke (0);
 ellipse (location.x, location.y, size, size);
  
 }

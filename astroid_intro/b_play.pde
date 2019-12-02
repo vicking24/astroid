@@ -12,7 +12,12 @@ void play () {
     ufotimer=0;
     mygameobject.add (new ufo());
   }
-
+  
+   addtimer++;
+    if (addtimer>350) {
+     mygameobject.add(new addl());
+      addtimer=0;
+    }
 
 
   int i=0;

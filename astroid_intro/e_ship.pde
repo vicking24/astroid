@@ -26,6 +26,10 @@ class ship extends gameobject { //connects the classes together
 
     popMatrix();
     
+    if (safe==true){
+    stroke (#17A5CE);
+    noFill ();
+    ellipse (location.x, location.y, 150, 150);}
   }
 
   void act () {

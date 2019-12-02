@@ -41,7 +41,7 @@ class ufo extends gameobject {
 
   void show() {
 
-
+  stroke (0);
 
     ufop.resize (size, size);
     image (ufop, location.x, location.y);

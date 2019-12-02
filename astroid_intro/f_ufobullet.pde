@@ -23,6 +23,7 @@ void show () {
 
  stroke (1);
  fill (100);
+ stroke (0);
 ellipse (location.x, location.y, size, size);
  
 }
@@ -30,8 +31,9 @@ ellipse (location.x, location.y, size, size);
 void act () {
 super.act();
  
-    if (dist (myship.location.x, myship.location.y, location.x, location.y)<size/2+25) {
+    if (dist (myship.location.x, myship.location.y, location.x, location.y)<size/2+25 &&safe==false) {
       myship.lives --;
+      safe=true;
       lif_ = true;
       myship.location.x= width/2;
       myship.location.y= height/2;
@@ -40,6 +42,16 @@ super.act();
       lives=0;
     
     }
+    
+    
+    if(safe==true){
+    
+      
+      safetimer++;
+      if (safetimer>480) {
+        safe=false;
+        safetimer=0;
+      }}
 
 
 timer--;
